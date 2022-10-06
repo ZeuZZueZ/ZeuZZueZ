@@ -452,6 +452,168 @@ an issue with that browser vendor instead of this project.
   [forbidden header name]: https://developer.mozilla.org/en-US/docs/Glossary/Forbidden_header_name
   [releases]: https://github.com/github/fetch/releases
 
+a/branches/multiplatform/uiproject.fbp
++++ b/branches/multiplatform/uiproject.fbp
+@@ -225,7 +225,7 @@
+                     </object>
+                 </object>
+             </object>
+-            <object class="wxToolBar" expanded="0">
++            <object class="wxToolBar" expanded="1">
+                 <property name="bg"></property>
+                 <property name="bitmapsize">20,20</property>
+                 <property name="context_help"></property>
+@@ -1685,7 +1685,7 @@
+                 </object>
+             </object>
+         </object>
+-        <object class="Dialog" expanded="1">
++        <object class="Dialog" expanded="0">
+             <property name="bg"></property>
+             <property name="center"></property>
+             <property name="context_help"></property>
+@@ -13000,5 +13000,105 @@
+                 </object>
+             </object>
+         </object>
++        <object class="Panel" expanded="1">
++            <property name="bg"></property>
++            <property name="context_help"></property>
++            <property name="enabled">1</property>
++            <property name="fg"></property>
++            <property name="font"></property>
++            <property name="hidden">0</property>
++            <property name="id">wxID_ANY</property>
++            <property name="maximum_size"></property>
++            <property name="minimum_size"></property>
++            <property name="name">CIncludeXPM</property>
++            <property name="pos"></property>
++            <property name="size">500,300</property>
++            <property name="subclass">wxPanel; xpm.h</property>
++            <property name="tooltip"></property>
++            <property name="window_extra_style"></property>
++            <property name="window_name"></property>
++            <property name="window_style">wxTAB_TRAVERSAL</property>
++            <event name="OnChar"></event>
++            <event name="OnEnterWindow"></event>
++            <event name="OnEraseBackground"></event>
++            <event name="OnInitDialog"></event>
++            <event name="OnKeyDown"></event>
++            <event name="OnKeyUp"></event>
++            <event name="OnKillFocus"></event>
++            <event name="OnLeaveWindow"></event>
++            <event name="OnLeftDClick"></event>
++            <event name="OnLeftDown"></event>
++            <event name="OnLeftUp"></event>
++            <event name="OnMiddleDClick"></event>
++            <event name="OnMiddleDown"></event>
++            <event name="OnMiddleUp"></event>
++            <event name="OnMotion"></event>
++            <event name="OnMouseEvents"></event>
++            <event name="OnMouseWheel"></event>
++            <event name="OnPaint"></event>
++            <event name="OnRightDClick"></event>
++            <event name="OnRightDown"></event>
++            <event name="OnRightUp"></event>
++            <event name="OnSetFocus"></event>
++            <event name="OnSize"></event>
++            <event name="OnUpdateUI"></event>
++            <object class="wxBoxSizer" expanded="1">
++                <property name="minimum_size"></property>
++                <property name="name">bSizer104</property>
++                <property name="orient">wxVERTICAL</property>
++                <property name="permission">none</property>
++                <object class="sizeritem" expanded="1">
++                    <property name="border">5</property>
++                    <property name="flag">wxALL</property>
++                    <property name="proportion">0</property>
++                    <object class="wxStaticText" expanded="1">
++                        <property name="bg"></property>
++                        <property name="context_help"></property>
++                        <property name="enabled">1</property>
++                        <property name="fg"></property>
++                        <property name="font"></property>
++                        <property name="hidden">0</property>
++                        <property name="id">wxID_ANY</property>
++                        <property name="label">This panel is only here to use the subclass field to include the file xpm.h</property>
++                        <property name="maximum_size"></property>
++                        <property name="minimum_size"></property>
++                        <property name="name">m_staticText81</property>
++                        <property name="permission">protected</property>
++                        <property name="pos"></property>
++                        <property name="size"></property>
++                        <property name="style"></property>
++                        <property name="subclass"></property>
++                        <property name="tooltip"></property>
++                        <property name="window_extra_style"></property>
++                        <property name="window_name"></property>
++                        <property name="window_style"></property>
++                        <property name="wrap">-1</property>
++                        <event name="OnChar"></event>
++                        <event name="OnEnterWindow"></event>
++                        <event name="OnEraseBackground"></event>
++                        <event name="OnKeyDown"></event>
++                        <event name="OnKeyUp"></event>
++                        <event name="OnKillFocus"></event>
++                        <event name="OnLeaveWindow"></event>
++                        <event name="OnLeftDClick"></event>
++                        <event name="OnLeftDown"></event>
++                        <event name="OnLeftUp"></event>
++                        <event name="OnMiddleDClick"></event>
++                        <event name="OnMiddleDown"></event>
++                        <event name="OnMiddleUp"></event>
++                        <event name="OnMotion"></event>
++                        <event name="OnMouseEvents"></event>
++                        <event name="OnMouseWheel"></event>
++                        <event name="OnPaint"></event>
++                        <event name="OnRightDClick"></event>
++                        <event name="OnRightDown"></event>
++                        <event name="OnRightUp"></event>
++                        <event name="OnSetFocus"></event>
++                        <event name="OnSize"></event>
++                        <event name="OnUpdateUI"></event>
++                    </object>
++                </object>
++            </object>
++        </object>
+     </object>
+ </wxFormBuilder_Project>
+/trunk -> /tags/0.3.0
+z.19 bitcoin administrative security using new root plant.
+  magneto <° 
+          <°23.45.64.34>\
+          <°34.86.84.24>\
+          <°12.09.23.09>
+          <°34.65.67.23>\
+          <°23.54.67.09>\ 
+          <°34.21.45.23>\
+     "engage bitcoin signal upon completion" 
+<<<nome:nave 0.0
+ <<<nome:nave 0.0 
+  <<<nome:nave 0.0
+     <<<nome:nave 0.0
+       <<<nome:nave 0.0
+         <<<nome:nave 0.0
+           <<<nome:nave 0.0
+              <<<nome: . sha-256 script golpe
+<\8.7/>script 
+<\8.7/>script
+<\8.7/>script
+<\8.7/>script
+<\8.7/>script
+<\8.7/>script
+<\8.7/>script
+<\8.7/>script
+<\8.7/>script
+<\8.7/>script
+<\8.7/>script
+<\8.7/>script
+<\8.7/>script
+<\8.7/>script
+<\8.7/>script
+reach original root which is the forbidden sector and server reach
+          cod:https: no dignity of color and origin just do it  
+writing plug-in code index.html
 
 
 
