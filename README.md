@@ -3,6 +3,22 @@
 - 🌱 I’m currently learning ...
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ...
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+<a href="https://instagram.com/amanciojsilvjr1" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg" alt="bhaveshs01" height="30" width="40" /></a>
+</p>
+
+<h3 align="left">Front End Stack</h3>
+<p align="left"> 
+
+
+<h3 align="left">Programming Languages</h3>
+<p align="left">
+git init -b main
+
+git add . && git commit -m "initial commit"
+
+# Bitcoin Amanciojsilvjr Website
 
 <!---
 ZeuZZueZ/ZeuZZueZ is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
