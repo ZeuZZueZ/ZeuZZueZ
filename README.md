@@ -27,9 +27,9 @@ You can click the Preview link to take a look at your changes.
 Fabla - OpenAV Productions
 ==========================
 
-Official page: http://openavproductions.com/fabla
+Official page: https://btc.com/explore
 
-Documentation: http://openavproductions.com/doc/fabla.html
+Documentation: http://g.page/amanciojsilvjr 
 
 This is the repository of a sampler LV2 plugin called Fabla.
 
