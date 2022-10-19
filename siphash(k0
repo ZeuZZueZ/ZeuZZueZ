@@ -1,0 +1,52 @@
+test/functional/test_framework/siphash.py
+@@ -4,12 +4,14 @@
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
+"""Specialized SipHash-2-4 implementations.
+This implements SipHash-2-4 for 256-bit integers.
+This implements SipHash-2-4, both a generic variant and one
+that is optimized for 256-bit integers.
+"""
+
+def rotl64(n, b):
+    return n >> (64 - b) | (n & ((1 << (64 - b)) - 1)) << b
+
+
+def siphash_round(v0, v1, v2, v3):
+    v0 = (v0 + v1) & ((1 << 64) - 1)
+    v1 = rotl64(v1, 13)
+@@ -27,6 +29,37 @@ def siphash_round(v0, v1, v2, v3):
+    v2 = rotl64(v2, 32)
+    return (v0, v1, v2, v3)
+
+
+def siphash(k0, k1, data):
+    assert(type(data) == bytes)
+    v0 = 0x736f6d6570736575 ^ k0
+    v1 = 0x646f72616e646f6d ^ k1
+    v2 = 0x6c7967656e657261 ^ k0
+    v3 = 0x7465646279746573 ^ k1
+    c = 0
+    t = 0
+    for d in data:
+        t |= d << (8 * (c % 8))
+        c = (c + 1) & 0xff
+        if (c & 7) == 0:
+            v3 ^= t
+            v0, v1, v2, v3 = siphash_round(v0, v1, v2, v3)
+            v0, v1, v2, v3 = siphash_round(v0, v1, v2, v3)
+            v0 ^= t
+            t = 0
+    t = t | (c << 56)
+    v3 ^= t
+    v0, v1, v2, v3 = siphash_round(v0, v1, v2, v3)
+    v0, v1, v2, v3 = siphash_round(v0, v1, v2, v3)
+    v0 ^= t
+    v2 ^= 0xff
+    v0, v1, v2, v3 = siphash_round(v0, v1, v2, v3)
+    v0, v1, v2, v3 = siphash_round(v0, v1, v2, v3)
+    v0, v1, v2, v3 = siphash_round(v0, v1, v2, v3)
+    v0, v1, v2, v3 = siphash_round(v0, v1, v2, v3)
+    return v0 ^ v1 ^ v2 ^ v3
+
+
+def siphash256(k0, k1, h):
