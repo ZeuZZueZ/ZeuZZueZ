@@ -1,0 +1,35 @@
+export LC_ALL=C.UTF-8
+
+export CONTAINER_NAME=ci_native_nowallet
+export DOCKER_NAME_TAG=ubuntu:16.04  # Use xenial to have one config run the tests in python3.5, see doc/dependencies.md
+export PACKAGES="python3-zmq clang-3.8 llvm-3.8"  # Use clang-3.8 to test C++11 compatibility, see doc/dependencies.md
+export DOCKER_NAME_TAG=ubuntu:18.04  # Use bionic to have one config run the tests in python3.6, see doc/dependencies.md (3.6 is not available in xenial/16.04)
+export PACKAGES="python3-zmq clang-3.9 llvm-3.9"  # Use clang-3.9 to test C++11 compatibility, see doc/dependencies.md (3.8 is not available in bionic)
+export DEP_OPTS="NO_WALLET=1"
+export GOAL="install"
+export BITCOIN_CONFIG="--enable-glibc-back-compat --enable-reduce-exports CC=clang-3.8 CXX=clang++-3.8 --with-boost-process"
+export BITCOIN_CONFIG="--enable-glibc-back-compat --enable-reduce-exports CC=clang-3.9 CXX=clang++-3.9 --with-boost-process"
+  4  
+configure.ac
+@@ -107,8 +107,8 @@ AC_PATH_TOOL(STRIP, strip)
+AC_PATH_TOOL(GCOV, gcov)
+AC_PATH_TOOL(LLVM_COV, llvm-cov)
+AC_PATH_PROG(LCOV, lcov)
+dnl Python 3.5 is specified in .python-version and should be used if available, see doc/dependencies.md
+AC_PATH_PROGS([PYTHON], [python3.5 python3.6 python3.7 python3.8 python3 python])
+dnl Python 3.6 is specified in .python-version and should be used if available, see doc/dependencies.md
+AC_PATH_PROGS([PYTHON], [python3.6 python3.7 python3.8 python3.9 python3 python])
+AC_PATH_PROG(GENHTML, genhtml)
+AC_PATH_PROG([GIT], [git])
+AC_PATH_PROG(CCACHE,ccache)
+  2  
+doc/dependencies.md
+@@ -18,7 +18,7 @@ These are the dependencies currently used by Bitcoin Core. You can find instruct
+| librsvg | |  |  |  |  |
+| MiniUPnPc | [2.0.20180203](https://miniupnp.tuxfamily.org/files) |  | No |  |  |
+| PCRE |  |  |  |  | [Yes](https://github.com/bitcoin/bitcoin/blob/master/depends/packages/qt.mk) |
+| Python (tests) |  | [3.5](https://www.python.org/downloads) |  |  |  |
+| Python (tests) |  | [3.6](https://www.python.org/downloads) |  |  |  |
+| qrencode | [3.4.4](https://fukuchi.org/works/qrencode) |  | No |  |  |
+| Qt | [5.9.8](https://download.qt.io/official_releases/qt/) | [5.5.1](https://github.com/bitcoin/bitcoin/issues/13478) | No |  |  |
+| SQLite | [3.32.1](https://sqlite.org/download.html) | [3.7.17](https://github.com/bitcoin/bitcoin/pull/19077) |  |  |  |
