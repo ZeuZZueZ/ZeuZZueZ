@@ -1,0 +1,35 @@
+./src/bitcoin-cli -testnet -named scanblocks action=start scanobjects='["addr(tb1qcxf2gv93c26s6mqz7y6etpqdf70zmn67dualgr)"]'
+{
+  "from_height": 0,
+  "to_height": 2376055,
+  "relevant_blocks": [
+    "000000000001bc35077dec4104e0ab1f667ae27059bd907f9a8fac55c802ae36",
+    "00000000000120a9c50542d73248fb7c37640c252850f0cf273134ad9febaf61",
+    "0000000000000082f7af3835da8b6146b0bfb243b8842f09c495fa1e74d454ed",
+    "0000000000000094c32651728193bfbe91f6789683b8d6ac6ae2d22ebd3cb5d3"
+  ]
+}
+PR (without accurate mode)
+Same as master
+
+./src/bitcoin-cli -testnet -named scanblocks action=start scanobjects='["addr(tb1qcxf2gv93c26s6mqz7y6etpqdf70zmn67dualgr)"]' accurate=false
+{
+  "from_height": 0,
+  "to_height": 2376055,
+  "relevant_blocks": [
+    "000000000001bc35077dec4104e0ab1f667ae27059bd907f9a8fac55c802ae36",
+    "00000000000120a9c50542d73248fb7c37640c252850f0cf273134ad9febaf61",
+    "0000000000000082f7af3835da8b6146b0bfb243b8842f09c495fa1e74d454ed",
+    "0000000000000094c32651728193bfbe91f6789683b8d6ac6ae2d22ebd3cb5d3"
+  ]
+}
+PR (with accurate mode)
+./src/bitcoin-cli -testnet -named scanblocks action=start scanobjects='["addr(tb1qcxf2gv93c26s6mqz7y6etpqdf70zmn67dualgr)"]' accurate=true
+{
+  "from_height": 0,
+  "to_height": 2376058,
+  "relevant_blocks": [
+    "0000000000000082f7af3835da8b6146b0bfb243b8842f09c495fa1e74d454ed",
+    "0000000000000094c32651728193bfbe91f6789683b8d6ac6ae2d22ebd3cb5d3"
+  ]
+}
