@@ -1,0 +1,178 @@
+permissions:
+  actions: read|write|none
+  checks: read|write|none
+  contents: read|write|none
+  deployments: read|write|none
+  id-token: read|write|none
+  issues: read|write|none
+  discussions: read|write|none
+  packages: read|write|none
+  pages: read|write|none
+  pull-requests: read|write|none
+  repository-projects: read|write|none
+  security-events: read|write|none
+  statuses: read|write|none
+permissions: read-all|write-all
+permissions: {}
+``` Além disso, você pode usar a chave `permissions` para adicionar e remover permissões de leitura para repositórios com fork, mas normalmente não pode permitir acesso de gravação. A exceção desse comportamento é quando um usuário administrador selecionou a opção **Enviar tokens para fluxos de trabalho de solicitações de pull** nas configurações do GitHub Actions. Para obter mais informações, confira "[Como gerenciar as configurações do GitHub Actions de um repositório](/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#enabling-workflows-for-private-repository-forks)".
+
+### Exemplo: Atribuindo permissões ao GITHUB_TOKEN
+
+Este exemplo mostra as permissões que estão sendo definidas para o `GITHUB_TOKEN` que se aplicará a todos os trabalhos no fluxo de trabalho. É concedido acesso de leitura a todas as permissões.
+
+```yaml
+name: "My workflow"
+
+on: [ push ]
+
+permissions: read-all
+
+jobs:
+  ...
+###bitcoin###
+concurrency: ci-${{ github.ref }}
+concurrency: 
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+concurrency: 
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+jobs:
+  my_first_job:
+    name: My first job
+  my_second_job:
+    name: My second job
+permissions:
+  actions: read|write|none
+  checks: read|write|none
+  contents: read|write|none
+  deployments: read|write|none
+  id-token: read|write|none
+  issues: read|write|none
+  discussions: read|write|none
+  packages: read|write|none
+  pages: read|write|none
+  pull-requests: read|write|none
+  repository-projects: read|write|none
+  security-events: read|write|none
+  statuses: read|write|none
+jobs:
+  job1:
+  job2:
+    needs: job1
+  job3:
+    needs: [job1, job2]
+jobs:
+  job1:
+  job2:
+    needs: job1
+  job3:
+    if: ${{ always() }}
+    needs: [job1, job2]
+name: example-workflow
+on: [push]
+jobs:
+  production-deploy:
+    if: github.repository == 'octo-org/octo-repo-prod'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+ubuntu-20.04 ou ubuntu-22.04
+
+runs-on: [self-hosted, linux]
+environment:
+  name: production_environment
+  url: https://github.com/ZeuZZueZ
+environment:
+  name: production_environment
+  url: ${{ steps.step_id.outputs.url_output }}
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    # Map a step output to a job output
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
+      output2: ${{ steps.step2.outputs.test }}
+    steps:
+      - id: step1
+        run: echo "test=hello" >> $GITHUB_OUTPUT
+      - id: step2
+        run: echo "test=world" >> $GITHUB_OUTPUT
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - run: echo ${{needs.job1.outputs.output1}} ${{needs.job1.outputs.output2}}
+
+jobs:
+  job1:
+    env:
+      FIRST_NAME: Mona
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: scripts
+
+name: bitcoin 
+
+on: push
+
+jobs:
+  my-job:
+    name: My Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a greeting
+        env:
+          MY_VAR: Hi there! My name is
+          FIRST_NAME: Mona
+          MIDDLE_NAME: The
+          LAST_NAME: Octocat
+        run: |
+          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+steps:
+ - name: My first step
+   if: ${{ github.event_name == 'pull_request' && github.event.action == 'unassigned' }}
+   run: echo This event is a pull request that had an assignee removed.
+
+steps:
+  - name: My first step
+    uses: octo-org/action-name@main
+  - name: My backup step
+    if: ${{ failure() }}
+    uses: actions/heroku@1.0.0
+name: Run a step if a secret has been set
+on: push
+jobs:
+  my-jobname:
+    runs-on: ubuntu-latest
+    env:
+      super_secret: ${{ secrets.SuperSecret }}
+    steps:
+      - if: ${{ env.super_secret != '' }}
+        run: echo 'This step will only run if the secret has a value set.'
+      - if: ${{ env.super_secret == '' }}
+        run: echo 'This step will only run if the secret does not have a value set.'
+
+steps:
+  # Reference a specific commit
+  - uses: actions/checkout@a81bbbf8298c0fa03ea29cdc473d45769f953675
+  # Reference the major version of a release
+  - uses: actions/checkout@v3
+  # Reference a specific version
+  - uses: actions/checkout@v3.2.0
+  # Reference a branch
+  - uses: actions/checkout@main
+- name: Clean temp directory
+  run: rm -rf *
+  working-directory: ./temp
+
+
+
