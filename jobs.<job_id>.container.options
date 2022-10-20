@@ -1,0 +1,4 @@
+volumes:
+  - my_docker_volume:/volume_mount
+  - /data/my_data
+  - /source/directory:/destination/directory
