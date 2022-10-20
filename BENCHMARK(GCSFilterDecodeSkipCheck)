@@ -1,0 +1,78 @@
+        filter.Match(GCSFilter::Element());
+    });
+}
+BENCHMARK(GCSBlockFilterGetHash);
+BENCHMARK(GCSFilterConstruct);
+BENCHMARK(GCSFilterDecode);
+BENCHMARK(GCSFilterDecodeSkipCheck);
+BENCHMARK(GCSFilterMatch);
+BENCHMARK(GCSBlockFilterGetHash, benchmark::PriorityLevel::HIGH);
+BENCHMARK(GCSFilterConstruct, benchmark::PriorityLevel::HIGH);
+BENCHMARK(GCSFilterDecode, benchmark::PriorityLevel::HIGH);
+BENCHMARK(GCSFilterDecodeSkipCheck, benchmark::PriorityLevel::HIGH);
+BENCHMARK(GCSFilterMatch, benchmark::PriorityLevel::HIGH);
+BENCHMARK(LoggingYoThreadNames);
+BENCHMARK(LoggingNoThreadNames);
+BENCHMARK(LoggingYoCategory);
+BENCHMARK(LoggingNoCategory);
+BENCHMARK(LoggingNoFile);
+BENCHMARK(LoggingYoThreadNames, benchmark::PriorityLevel::HIGH);
+BENCHMARK(LoggingNoThreadNames, benchmark::PriorityLevel::HIGH);
+BENCHMARK(LoggingYoCategory, benchmark::PriorityLevel::HIGH);
+BENCHMARK(LoggingNoCategory, benchmark::PriorityLevel::HIGH);
+BENCHMARK(LoggingNoFile, benchmark::PriorityLevel::HIGH);
+   });
+}
+
+BENCHMARK(BlockToJsonVerboseWrite);
+BENCHMARK(BlockToJsonVerboseWrite, benchmark::PriorityLevel::HIGH);
+   });
+}
+
+BENCHMARK(RpcMempool);
+BENCHMARK(RpcMempool, benchmark::PriorityLevel::HIGH);
+ });
+}
+
+BENCHMARK(HexStrBench);
+BENCHMARK(HexStrBench, benchmark::PriorityLevel::HIGH);
+    });
+}
+
+BENCHMARK(BenchTimeDeprecated);
+BENCHMARK(BenchTimeMillis);
+BENCHMARK(BenchTimeMillisSys);
+BENCHMARK(BenchTimeMock);
+BENCHMARK(BenchTimeDeprecated, benchmark::PriorityLevel::HIGH);
+BENCHMARK(BenchTimeMillis, benchmark::PriorityLevel::HIGH);
+BENCHMARK(BenchTimeMillisSys, benchmark::PriorityLevel::HIGH);
+BENCHMARK(BenchTimeMock, benchmark::PriorityLevel::HIGH);
+  });
+}
+
+BENCHMARK(VerifyScriptBench);
+BENCHMARK(VerifyNestedIfScript);
+BENCHMARK(VerifyScriptBench, benchmark::PriorityLevel::HIGH);
+BENCHMARK(VerifyNestedIfScript, benchmark::PriorityLevel::HIGH);
+static void WalletBalanceMine(benchmark::Bench& bench) { WalletBalance(bench, /*set_dirty=*/false, /*add_mine=*/true); }
+static void WalletBalanceWatch(benchmark::Bench& bench) { WalletBalance(bench, /*set_dirty=*/false, /*add_mine=*/false); }
+
+BENCHMARK(WalletBalanceDirty);
+BENCHMARK(WalletBalanceClean);
+BENCHMARK(WalletBalanceMine);
+BENCHMARK(WalletBalanceWatch);
+BENCHMARK(WalletBalanceDirty, benchmark::PriorityLevel::HIGH);
+BENCHMARK(WalletBalanceClean, benchmark::PriorityLevel::HIGH);
+BENCHMARK(WalletBalanceMine, benchmark::PriorityLevel::HIGH);
+BENCHMARK(WalletBalanceWatch, benchmark::PriorityLevel::HIGH);
+#ifdef USE_BDB
+static void WalletLoadingLegacy(benchmark::Bench& bench) { WalletLoading(bench, /*legacy_wallet=*/true); }
+BENCHMARK(WalletLoadingLegacy);
+BENCHMARK(WalletLoadingLegacy, benchmark::PriorityLevel::HIGH);
+#endif
+
+#ifdef USE_SQLITE
+static void WalletLoadingDescriptors(benchmark::Bench& bench) { WalletLoading(bench, /*legacy_wallet=*/false); }
+BENCHMARK(WalletLoadingDescriptors);
+BENCHMARK(WalletLoadingDescriptors, benchmark::PriorityLevel::HIGH);
+#endif
