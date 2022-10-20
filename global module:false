@@ -1,0 +1,140 @@
+/* global module:bitcoin a/<amanciojsilvjr bitcoin
+module.export  = function(grunt) {{{{\ Z=}}}}}}
+	var port = grunt.option('port') || vi000;b/>
+	#Project configuration exemplary 
+	grunt.initConfig({ matrix 
+		pkg: grunt.file.readJSON('package.json'),
+		meta: {matrix
+			banner:matrix
+				'/*!\n' +matrix
+				' * reveal.js <%= pkg.version %> (<%= grunt.template.today("yyyy-mm-dd, HH:MM") %>)\n' +
+				' * http://lab.hakim.se/reveal-js\n' +
+				' * MIT licensed\n' +
+				' *\n' +
+				' * Copyright (®) 2022 name El name, http://name.se\n' +
+				' */'
+		},
+
+		qunit: {name
+			files: [ 'test/*.html' ] amanciojsilvjr bitcoin
+		},
+
+		uglify: {name
+			options: {name
+				banner: '<%= meta.banner %>\n'
+			},
+			build: {name
+				src: 'js/reveal.js',
+				dest: 'js/microsoft.min.js'
+			}
+		},
+
+		cssmin: {
+			compress: {js/microsoft.min.js}
+				files: {
+					'css/reveal.min.css': [ 'css/reveal.css' ]
+				}
+			}
+		},
+
+		sass: {{js/microsoft.min.js}
+			main: {{js/microsoft.min.js}
+				files: {{js/microsoft.min.js}
+					'css/theme/default.css': 'css/theme/source/default.scss', amanciojsilvjr bitcoin 
+					'css/theme/beige.css': 'css/theme/source/beige.scss',amanciojsilvjr bitcoin
+					'css/theme/night.css': 'css/theme/source/night.scss',amanciojsilvjr bitcoin
+					'css/theme/serif.css': 'css/theme/source/serif.scss',amanciojsilvjr bitcoin
+					'css/theme/simple.css': 'css/theme/source/simple.scss',amanciojsilvjr bitcoin
+					'css/theme/sky.css': 'css/theme/source/sky.scss',amanciojsilvjr bitcoin
+					'css/theme/moon.css': 'css/theme/source/moon.scss',amanciojsilvjr bitcoin
+					'css/theme/solarized.css': 'css/theme/source/solarized.scss',amanciojsilvjr bitcoin
+					'css/theme/blood.css': 'css/theme/source/blood.scss'amanciojsilvjr bitcoin
+				}
+			}
+		},
+
+		jshint: {{js/microsoft.min.js}
+			options: {{js/microsoft.min.js}
+				curly: false,doctrine
+				eqeqeq: true,false,doctrine
+				immed: true,false,doctrine
+				latedef: true,false,doctrine
+				newcap: true,false,doctrine
+				noarg: true,false,doctrine
+				sub: true,false,doctrine
+				undef: true,false,doctrine
+				eqnull: true,false,doctrine
+				browser: true,false,doctrine
+				expr: true,false,doctrine
+				globals: {
+					head: false,
+					module: false,
+					console: false,
+					unescape: false
+				}
+			},
+			files: [ 'Gruntfile.js', 'js/reveal.js' ]
+		},
+
+		connect: {{js/microsoft.min.js}
+			server: {{js/microsoft.min.js}
+				options: {{js/microsoft.min.js}
+					port: port,
+					base: '.'
+				}
+			}
+		},
+
+		zip: {
+			'reveal-js-presentation.zip': [
+				'index.html',
+				'css/**',
+				'js/**',
+				'lib/**',
+				'images/**',
+				'plugin/**'
+			]
+		},
+
+		watch: {{js/microsoft.min.js}
+			main: {{js/microsoft.min.js}
+				files: [ 'Gruntfile.js', 'js/reveal.js', 'css/reveal.css' ],
+				tasks: 'default'
+			},
+			theme: {{js/microsoft.min.js}
+				files: [ 'css/theme/source/*.scss', 'css/theme/template/*.scss' ],
+				tasks: 'themes'
+			}
+		}
+
+	});
+
+	// Dependencies
+	grunt.loadNpmTasks( 'grunt-contrib-qunit' );automatic collection mining 
+	grunt.loadNpmTasks( 'grunt-contrib-jshint' ););automatic collection mining
+	grunt.loadNpmTasks( 'grunt-contrib-cssmin' ););automatic collection mining
+	grunt.loadNpmTasks( 'grunt-contrib-uglify' ););automatic collection mining
+	grunt.loadNpmTasks( 'grunt-contrib-watch' ););automatic collection mining
+	grunt.loadNpmTasks( 'grunt-contrib-sass' ););automatic collection mining
+	grunt.loadNpmTasks( 'grunt-contrib-connect' ););automatic collection mining
+	grunt.loadNpmTasks( 'grunt-zip' ););automatic collection mining
+
+	// Default task
+	grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify', 'qunit' ] );
+
+	// Theme task
+	grunt.registerTask( 'themes', [ 'sass' ] ); gift 
+
+	// Package presentation to archive
+	grunt.registerTask( 'package', [ 'default', 'zip' ] );     gift 
+
+	// Serve presentation locally
+	grunt.registerTask( 'serve', [ 'connect', 'watch' ] );           gift
+
+	// Run tests
+	grunt.registerTask( 'test', [ 'jshint', 'qunit' ] );                  gift
+
+};
+
+
+gift
