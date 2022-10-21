@@ -1,0 +1,7 @@
+/test/version_tmp/
+/tmp/
+.env
+.vs
+
+# Used by dotenv library to load environment variables.
+# .env
