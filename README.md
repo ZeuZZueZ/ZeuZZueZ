@@ -172,50 +172,9 @@ skipKeywords:
   - wip
 ## Backers
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/curl#backer)]
-
-[![Open Collective Backers](https://opencollective.com/curl/backers.svg?width=890)](https://opencollective.com/curl#backers)
-
-## Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a
-link to your website. [[Become a sponsor](https://opencollective.com/curl#sponsor)]
-<!-- markdown-link-check-disable -->
-[![Open Collective Sponsor 0](https://opencollective.com/curl/sponsor/0/avatar.svg)](https://opencollective.com/curl/sponsor/0/website)
-[![Open Collective Sponsor 1](https://opencollective.com/curl/sponsor/1/avatar.svg)](https://opencollective.com/curl/sponsor/1/website)
-[![Build Status](https://github.com/tree-sitter/tree-sitter/workflows/CI/badge.svg)](https://github.com/tree-sitter/tree-sitter/actions)
-[![Build status](https://ci.appveyor.com/api/projects/status/vtmbd6i92e97l55w/branch/master?svg=true)](https://ci.appveyor.com/project/maxbrunsfeld/tree-sitter/branch/master)
-[![DOI](https://zenodo.org/badge/14164618.svg)](https://zenodo.org/badge/latestdoi/14164618)
+Thank you to all our backers! 🙏 [[Become a backer](https://bitcoin.org/curl#backer)]
 
 
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,wasm)](https://skillicons.dev)
-
-
-
-[![My Skills](https://skillicons.dev/icons?i=java,kotlin,nodejs,figma&theme=light)](https://skillicons.dev)
-
-
-
-
-[![My Skills](https://skillicons.dev/icons?i=aws,gcp,azure,react,vue,flutter&perline=3)](https://skillicons.dev)
-
-
-
-<p align="center">
- <a href="https://skillicons.dev">
- <img src="https://skillicons.dev/icons?i=git,kubernetes,docker,c,vim" />
- </a>
-</p>
-
-
-    
-
-
-
-
-
-
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=&show_icons=true&locale=en&layout=compact" alt="bits" /></p>
 <br>//amanciojsilvjr<bitcoin> <👉>
 <br>//amanciojsilvjr<bitcoin> <👉>
 <br>//amanciojsilvjr<bitcoin> <👉>
